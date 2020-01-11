@@ -21,6 +21,6 @@ resource "aws_instance" "web-ui" {
   }
   count = 2
   provisioner "local-exec" {
-    command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ec2-user --private-key ./default_n_virginia.pem -i '${element(aws_instance.web-ui[count.index].public_ip, count.index)},' web-apache.yml"
+    command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ec2-user --private-key ./default_n_virginia.pem -i ${self.public_ip}, web-apache.yml"
   }
 }
