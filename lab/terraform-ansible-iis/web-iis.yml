@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  tasks:
+   - name: Acme IIS site
+      win_iis_website:
+       name: Acme
+       state: started

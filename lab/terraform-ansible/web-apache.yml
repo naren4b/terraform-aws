@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: install httpd
+      yum: name=httpd update_cache=yes state=latest
+      notify: start apache
+    - name: Copy index file
+      copy:
+        src: /root/project/terraform/terraform-ansible/index.html
+        dest: /var/www/html/
+
+  handlers:
+    - name: start apache
+      service: name=httpd state=started
