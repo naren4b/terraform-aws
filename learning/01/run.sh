@@ -1,3 +1,5 @@
+ls /root/main.tf
+
 terraform init
 terraform plan
 terraform validate
