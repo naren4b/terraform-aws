@@ -1,3 +1,3 @@
 variable "filename" {
- default="tmp/temp.txt"
+ default="/tmp/temp.txt"
 }
