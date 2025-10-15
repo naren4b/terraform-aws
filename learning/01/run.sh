@@ -1,4 +1,5 @@
-ls /root/main.tf
+cd /root/terraform-local
+ls main.tf
 
 terraform init
 terraform plan
