@@ -9,3 +9,25 @@
 - map  # key value pair of single type map | example `type = map(number)`
 - tupple # fixed length, ordered(types) list with different type of values  | example `type = tuple([String,number,bool])`
 - object # comples data structure `type = object({name = string color = string age = number food =list(string)})`
+
+# Usage of Variable 
+- If not defined then terraform apply will ask for the values of each varaibles 
+- As part of the command | example  `-var "<name>=<value>"`
+- As Environment variable | example `TF_VAR_<name>=<value>`
+- As .tfvars or tfvars.json |
+    - Automatically picked if file name is
+      ```
+      - terraform.tfvars
+      - terraform.tfvars.json
+      - auto.tfvars
+      - auto.tfvars.json
+      ```
+    
+   - Any  other name , then needs to be applied
+    `--var-file <filename>.tfvars or <filename>.tfvars.json`
+    Example file content   
+      ```
+        name1 = "value1"
+        name2 = "value2"
+      ``` 
+
