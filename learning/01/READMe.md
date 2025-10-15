@@ -35,4 +35,30 @@
 - `terraform.tfvars`
 - `*.auto.tfvars(alphabets)`
 - `-var` or `-var-file` (command-line flags)
+
+# Resources 
+How to access respurce attribute ( output of one resource) `${<resource_type>.<name_of_the_resource>.<name_of_the_attribute>}`
+```tf
+resource "local_file" "pet-records"{
+    filename= "/tmp/earth.txt"
+    content = "web-server-${random_pet.server.id}"
+}
+resource "random_pet" "server" {
+  keepers = {
+    # Generate a new pet name each time we switch to a new AMI id
+    ami_id = var.ami_id
+  }
+}
+```
+## Dependency 
+ - Implicit Dependency
+ - Explicit Dependency
+```
+...
+ depends_on = [
+  random_pet.server
+]
+```
+
+
   
