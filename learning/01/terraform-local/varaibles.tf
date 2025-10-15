@@ -11,6 +11,6 @@ variable "replicas" {
 }
 variable "isLocal"{
    default ="true"
-   type = "boolean"
+   type = "bool"
    description = "Example of Boolean"
 } 
