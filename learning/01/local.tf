@@ -1,4 +1,4 @@
 resource "local_file" "planet"{
-  filename = /root/earth.txt
+  filename = "/tmp/earth.txt"
   content = "My Name is Earth"
 }
