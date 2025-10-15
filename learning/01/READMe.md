@@ -19,8 +19,8 @@
       ```
       - terraform.tfvars
       - terraform.tfvars.json
-      - auto.tfvars
-      - auto.tfvars.json
+      - *.auto.tfvars
+      - *.auto.tfvars.json
       ```
     
    - Any  other name , then needs to be applied
@@ -30,4 +30,9 @@
         name1 = "value1"
         name2 = "value2"
       ``` 
-
+## Order of picking the varaible ( last one overrides ) // `variables.tfvar` does not define the `default`
+- Environment Variable `TF_VAR_`
+- `terraform.tfvars`
+- `*.auto.tfvars(alphabets)`
+- `-var` or `-var-file` (command-line flags)
+  
